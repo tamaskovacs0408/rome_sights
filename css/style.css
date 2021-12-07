@@ -1,0 +1,152 @@
+/* font-family: 'Quattrocento', serif;
+font-family: 'Quattrocento Sans', sans-serif; */
+/* ----- MAIN STYLES ----- */
+:root {
+    --h-font-family: 'Quattrocento', serif;
+    --main-font-family: 'Quattrocento Sans', sans-serif;
+    --main-bg-color: rgba(255, 243, 176, 0.563);
+    --main-font-color: rgb(84, 11, 14);
+    --border-color: rgb(158, 42, 43);
+}
+body {
+    background-image: url("../images/main_bg.jpg");
+    font-size: 10px;
+    display: flex;
+    justify-content: center;
+}
+.main_content {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 90vw;
+    height: auto;
+    background-color: var(--main-bg-color);
+    outline: 1px solid var(--border-color);
+    font-family: var(--main-font-family);
+    color: var(--main-font-color);
+    font-size: 1.4rem;
+    box-sizing: border-box;
+    margin: 2.5rem;
+}
+/* ----- HEADER STYLES ----- */
+.header-bg {
+    background-image: url(../images/header_bg.jpg);
+    padding: 5rem;
+    background-size: 100%;
+    height: auto;
+    background-repeat: no-repeat;
+
+}
+header h1 {
+    font-family: var(--h-font-family);
+    font-size: 5rem;
+    letter-spacing: 0.188rem;
+    text-align: center;
+    font-weight: 800;
+}
+blockquote {
+    display: block;
+    text-align: center;
+    font-size: 1.5rem;
+    font-style: italic;
+    margin: 1.625rem;
+}
+blockquote::before {
+    content: open-quote;
+}
+blockquote::after {
+    content: close-quote;
+}
+.author {
+    text-align: center;
+    font-size: 1.2rem;
+}
+/* ----- MAIN ----- */
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+a {
+    text-decoration: none;
+    color: var(--main-font-color);
+    cursor: pointer;
+}
+a:hover {
+    color: rgb(179, 27, 32);
+    text-decoration: underline;
+}
+/* .text::first-letter {
+    font-size: 2rem;
+    font-weight: 600;
+} */
+.introduction p {
+    margin: 1.625rem;
+    text-align: justify;
+}
+.sights {
+    padding: 0.625rem;
+}
+.sights img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 300px;
+    outline: 2px solid var(--border-color);
+    border-radius: 50%;
+}
+.sights h2 {
+    font-size: 2rem;
+    font-family: var(--h-font-family);
+    font-weight: 600;
+    text-align: center;
+    margin: 0.625rem;
+}
+.sights p {
+    margin: 1.625rem;
+    text-align: justify;
+}
+footer {
+    align-self: flex-end;
+    align-content: center;
+    right: 30%;
+    display: inline;
+    position: relative;
+    bottom: 0;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: var(--main-font-family);
+    color: var(--main-font-color);
+    font-size: 1rem;
+}
+@media screen and (min-width: 992px) {
+    .main_content {
+        width: 80vw;
+        font-size: 1.7rem;
+    }
+    .header-bg {
+        padding: 15rem;
+    }
+    .sights {
+        display: flex;
+        justify-content: space-around;
+    }
+    .sights img {
+        width: 500px;
+        border-radius: 0%;
+    }
+    .sights {
+        margin: 1.875rem;
+    }
+    .forum {
+        flex-direction: row-reverse;
+        justify-content: space-between;
+    }
+    .trevi {
+        flex-direction: row-reverse;
+    }
+    .vatican {
+        flex-direction: row-reverse;
+    }
+}
