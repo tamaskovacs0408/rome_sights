@@ -170,7 +170,7 @@ main {
 } */
 .introduction p {
     margin: 1.625rem;
-    text-align: justify;
+    text-align: left;
 }
 .sights {
     padding: 0.625rem;
@@ -193,6 +193,47 @@ main {
 .sights p {
     margin: 1.625rem;
     text-align: justify;
+}
+.gallery {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.gallery .image {
+    width: 100%;
+    padding: 0.625rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+.gallery .image img {
+    width: 300px;
+    vertical-align: middle;
+    transition: all 0.3s ease;
+}
+.gallery .image:hover img {
+    transform: scale(1.01);
+}
+@media screen and (min-width: 768px) {
+    .gallery {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    .gallery .image {
+        box-sizing: border-box;
+        width: calc(100% / 2);
+    }
+    .gallery .image span {
+        display: flex;
+        width: 100%;
+        overflow: hidden;
+    }
+    .gallery .image img {
+        width: 100%;
+    }
+    .gallery .image:hover img {
+        transform: scale(1.11);
+    }
 }
 @media screen and (min-width: 992px) {
     .main_content {
@@ -223,30 +264,19 @@ main {
     .sights {
         margin: 1.875rem;
     }
+    .gallery .image {
+        width: calc(100% / 3);
+        padding: 0.313rem;
+    }
+    .gallery .image img{
+        width: 100%;
+
+    }
 }
 @media screen and (min-width: 1400px) {
-    .main_content {
-        width: 80vw;
-        font-size: 1.7rem;
-    }
-    .header-bg {
-        padding: 15rem;
-    }
-    main {
-        display: block;
-    }
-    .row {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-around;
-        padding: 0;
-    }
     .sights img {
         min-width: 500px;
         width: 600px;
         border-radius: 0%;
-    }
-    .sights {
-        margin: 1.875rem;
     }
 }

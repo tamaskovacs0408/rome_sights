@@ -156,7 +156,19 @@ main {
 }
 .sights p {
     margin: 1.625rem;
-    text-align: justify;
+    text-align: left;
+}
+.page-link {
+    text-decoration: none;
+    color: var(--main-font-color);
+    cursor: pointer;
+}
+.page-link:hover {
+    color: rgb(179, 27, 32);
+    text-decoration: underline;
+}
+.source {
+    font-size: 1rem;
 }
 @media screen and (min-width: 992px) {
     .main_content {
@@ -175,5 +187,8 @@ main {
     }
     .sights {
         margin: 1.875rem;
+    }
+    .text {
+        line-height: auto;
     }
 }
