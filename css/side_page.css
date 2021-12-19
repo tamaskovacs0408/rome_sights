@@ -28,13 +28,6 @@ body {
     margin: 2.5rem;
 }
 /* ----- HEADER STYLES ----- */
-.header-bg {
-    background-image: url(../images/header_bg.jpg);
-    padding: 2.5rem;
-    background-size: 100%;
-    height: auto;
-    background-repeat: no-repeat;
-}
 nav {
     position: relative;
     height: 25px;
@@ -54,7 +47,7 @@ nav {
     width: 40px;
     height: 40px;
     cursor: pointer;
-    z-index: 1;
+    z-index: 7;
 }
 /* MAKING THE 3 HAMBURGER LINES */
 
@@ -63,6 +56,7 @@ nav {
 .hamburger-lines::after {
     display: block;
     position: absolute;
+    z-index: 7;
     width: 100%;
     height: 3px;
     background-color: var(--border-color);
@@ -71,10 +65,12 @@ nav {
 .hamburger-lines::before {
     content: "";
     top: -10px;
+    z-index: 7;
 }
 .hamburger-lines::after {
     content: "";
     top: 10px;
+    z-index: 7;
 }
 .menu-box {
     display: none;
@@ -86,6 +82,7 @@ nav {
     background-color: rgba(255, 243, 176, 0.796);
     top: 0;
     height: 400px;
+    z-index: 5;
     visibility: hidden;
     box-shadow: 3px 0 5px rgba(0, 0, 0, 0.527);
     /* TRANSITION(átmenet) */
@@ -99,7 +96,7 @@ nav {
 }
 .nav-link {
     text-decoration: none;
-    font-family: var(--nav-font-family);
+    font-family: var(--main-font-family);
     color: var(--border-color);
 
 }
@@ -115,6 +112,7 @@ nav {
 /* MAKING THE X WHEN WE CLICK ON THE HABMURGER LINES */
 #menu_toggle:checked ~ .menu_button .hamburger-lines{
     transform: rotate(45deg);
+    z-index: 6;
 }
 #menu_toggle:checked ~ .menu_button .hamburger-lines::before {
     display: none;
@@ -122,6 +120,7 @@ nav {
 #menu_toggle:checked ~ .menu_button .hamburger-lines::after {
     transform: rotate(90deg);
     top: 0px;
+    z-index: 6;
 }
 header h1 {
     font-family: var(--h-font-family);
@@ -139,12 +138,35 @@ main {
 .sights {
     padding: 0.625rem;
 }
-.sights img {
+#slider {
+    overflow: hidden;
+}
+#slider figure {
+    position: relative;
+    width: 200%;
+    margin: 0;
+    padding: 0;
+    left: 0;
+    animation: 15s slider infinite;
+}
+#slider figure img {
+    width: 50%;
+    float: left;
+}
+@keyframes slider {
+    0% {
+        left: 0;
+    }
+    50% {
+        left: -100%;
+    }
+}
+/* .sights img {
     display: block;
     margin-left: auto;
     margin-right: auto;
     width: 300px;
-}
+} */
 .sights h2 {
     font-size: 2rem;
     font-family: var(--h-font-family);
@@ -172,9 +194,12 @@ main {
     font-size: 1rem;
 }
 @media screen and (min-width: 768px) {
-    .sights img {
-        width: 500px;
-        outline: 1px solid var(--border-color);
+    .header-bg {
+        background-image: url(../images/header_bg.jpg);
+        padding: 5rem;
+        background-size: 100%;
+        height: auto;
+        background-repeat: no-repeat;
     }
 }
 @media screen and (min-width: 992px) {
@@ -182,16 +207,13 @@ main {
         width: 80vw;
         font-size: 1.7rem;
     }
-    .header-bg {
-        padding: 15rem;
-    }
     header h1 {
         font-size: 5rem;
     }
-    .sights img {
+    /* .sights img {
         width: 700px;
         outline: 1px solid var(--border-color);
-    }
+    } */
     .sights {
         margin: 1.875rem;
     }
