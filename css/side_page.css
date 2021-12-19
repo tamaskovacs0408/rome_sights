@@ -144,8 +144,6 @@ main {
     margin-left: auto;
     margin-right: auto;
     width: 300px;
-    outline: 2px solid var(--border-color);
-    border-radius: 50%;
 }
 .sights h2 {
     font-size: 2rem;
@@ -156,7 +154,28 @@ main {
 }
 .sights p {
     margin: 1.625rem;
-    text-align: justify;
+    text-align: left;
+}
+.page-link  {
+    display: inline;
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    color: var(--main-font-color);
+    cursor: pointer;
+}
+.page-link:hover {
+    color: rgb(179, 27, 32);
+    text-decoration: underline;
+}
+.source {
+    font-size: 1rem;
+}
+@media screen and (min-width: 768px) {
+    .sights img {
+        width: 500px;
+        outline: 1px solid var(--border-color);
+    }
 }
 @media screen and (min-width: 992px) {
     .main_content {
@@ -171,9 +190,12 @@ main {
     }
     .sights img {
         width: 700px;
-        border-radius: 0%;
+        outline: 1px solid var(--border-color);
     }
     .sights {
         margin: 1.875rem;
+    }
+    .text {
+        line-height: auto;
     }
 }
