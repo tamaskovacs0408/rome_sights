@@ -130,6 +130,7 @@ header h1 {
     letter-spacing: 0.188rem;
     text-align: center;
     font-weight: 800;
+    padding-top: 1rem;
 }
 blockquote {
     display: block;
@@ -294,6 +295,9 @@ main {
 }
 /* --- RESPONSIVE STYLES --- */
 @media screen and (min-width: 768px) {
+    .header-bg {
+        padding: 5rem;
+    }
     .sights img {
         min-width: 350px;
         max-width: 400px;
@@ -324,7 +328,7 @@ main {
         font-size: 1.7rem;
     }
     .header-bg {
-        padding: 15rem;
+        padding: 10rem;
     }
     main {
         display: block;
@@ -336,8 +340,7 @@ main {
         padding: 0;
     }
     .sights img {
-        min-width: 350px;
-        max-width: 400px;
+        width: 350px;
         filter: grayscale(70%);
     }
     .sights img:hover {
