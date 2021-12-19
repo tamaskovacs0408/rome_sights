@@ -172,6 +172,7 @@ main {
     margin: 1.625rem;
     text-align: left;
 }
+/* --- SIGHTS STYLE --- */
 .sights {
     padding: 0.625rem;
 }
@@ -179,9 +180,8 @@ main {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 300px;
-    outline: 2px solid var(--border-color);
-    border-radius: 50%;
+    min-width: 200px;
+    max-width: 300px;
 }
 .sights h2 {
     font-size: 2rem;
@@ -194,6 +194,7 @@ main {
     margin: 1.625rem;
     text-align: justify;
 }
+/* --- IMAGE GALLERY --- */
 .gallery {
     display: flex;
     flex-direction: column;
@@ -214,6 +215,7 @@ main {
 .gallery .image:hover img {
     transform: scale(1.01);
 }
+/* --- PREVIEW BOX --- */
 .preview-box {
     position: fixed;
     max-width: 700px;
@@ -290,7 +292,12 @@ main {
     display: none;
     background: rgba(0, 0, 0, 0.4);
 }
+/* --- RESPONSIVE STYLES --- */
 @media screen and (min-width: 768px) {
+    .sights img {
+        min-width: 350px;
+        max-width: 400px;
+    }
     .gallery {
         flex-direction: row;
         flex-wrap: wrap;
@@ -331,7 +338,6 @@ main {
     .sights img {
         min-width: 350px;
         max-width: 400px;
-        border-radius: 0%;
         filter: grayscale(70%);
     }
     .sights img:hover {
@@ -346,7 +352,9 @@ main {
     }
     .gallery .image img{
         width: 100%;
-
+    }
+    .preview-box {
+        max-width: 900px;
     }
 }
 @media screen and (min-width: 1400px) {
@@ -354,5 +362,8 @@ main {
         min-width: 500px;
         width: 600px;
         border-radius: 0%;
+    }
+    .preview-box {
+        max-width: 1100px;
     }
 }
